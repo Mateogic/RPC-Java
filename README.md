@@ -84,17 +84,21 @@ mvn clean install -DskipTests
 Windows环境：
 
 ```bash
-cd D:\java_stduy\version5\krpc-provider
-D:\software\JDK17\bin\java -cp "target\krpc-provider-1.0-SNAPSHOT.jar;target\lib\*" com.kama.provider.ProviderTest
+cd krpc-provider
+# 若target/lib目录为空
+mvn dependency:copy-dependencies -DoutputDirectory=target/lib
+java -cp "target\krpc-provider-1.0-SNAPSHOT.jar;target\lib\*" com.kama.provider.ProviderTest
 ```
 
 ### 2.启动服务消费者（Consumer）
 
 Windows环境：
 
-```
-cd D:\java_stduy\version5\krpc-consumer
-D:\software\JDK17\bin\java -cp "target\krpc-consumer-1.0-SNAPSHOT.jar;target\lib\*" com.kama.consumer.ConsumerTest
+```bash
+cd krpc-consumer
+# 若target/lib目录为空
+mvn dependency:copy-dependencies -DoutputDirectory=target/lib
+java -cp "target\krpc-consumer-1.0-SNAPSHOT.jar;target\lib\*" com.kama.consumer.ConsumerTest
 ```
 
 
